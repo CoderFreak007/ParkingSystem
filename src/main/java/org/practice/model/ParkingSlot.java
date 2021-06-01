@@ -1,19 +1,16 @@
 package org.practice.model;
 
-public class ParkingSlot {
+public abstract class ParkingSlot {
 
     private static int AUTOINCREAMENTID = 1;
 
     private int id;
 
-    private VehicleType reservedForVehicleType;
-
     private Ticket ticket;
 
-    public ParkingSlot(VehicleType reservedForVehicleType) {
+    public ParkingSlot() {
         this.id = AUTOINCREAMENTID;
         AUTOINCREAMENTID++;
-        this.reservedForVehicleType = reservedForVehicleType;
     }
 
     public int getId() {
@@ -28,11 +25,9 @@ public class ParkingSlot {
         this.ticket = ticket;
     }
 
-    public VehicleType getReservedForVehicleType() {
-        return reservedForVehicleType;
-    }
-
     public boolean isEmpty(){
         return ticket == null;
     }
+
+    public abstract boolean isSuitableForVehicle(Vehicle vehicle);
 }

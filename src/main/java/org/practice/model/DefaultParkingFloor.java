@@ -11,11 +11,11 @@ public class DefaultParkingFloor extends ParkingFloor {
     public void buildParkingSlots() {
             for(int i = 0; i< super.getParkingSlots().length; i++) {
                 if (i == 0)
-                    super.getParkingSlots()[i] = new ParkingSlot(VehicleType.TRUCK);
+                    super.getParkingSlots()[i] = new TruckParkingSlot();
                 else if(i == 1 || i == 2)
-                    super.getParkingSlots()[i] = new ParkingSlot(VehicleType.BIKE);
+                    super.getParkingSlots()[i] = new BikeParkingSlot();
                 else
-                    super.getParkingSlots()[i] = new ParkingSlot(VehicleType.CAR);
+                    super.getParkingSlots()[i] = new CarParkingSlot();
             }
 
     }

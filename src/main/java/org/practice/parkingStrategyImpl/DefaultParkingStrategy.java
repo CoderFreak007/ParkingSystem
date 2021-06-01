@@ -10,7 +10,7 @@ public class DefaultParkingStrategy implements ParkingStrategy {
 
         for(ParkingFloor parkingFloor : parkingLot.getParkingFloors()){
             for(ParkingSlot parkingSlot : parkingFloor.getParkingSlots()){
-                if(parkingSlot.getReservedForVehicleType().equals(vehicle.getVehicleType()))
+                if(parkingSlot.isSuitableForVehicle(vehicle))
                     return new Ticket(parkingLot.getId(), parkingFloor.getId(), parkingSlot.getId(), vehicle);
             }
         }
